@@ -97,11 +97,13 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public Result<Employee> getEmployee(@PathVariable Integer id) {
         Employee employee = employeeService.getById(id);
+
         return Result.success(employee);
     }
     @PutMapping
     public Result updateEmployee(@RequestBody EmployeeDTO employeeDTO) {
         Employee employee=new Employee();
+
         BeanUtils.copyProperties(employeeDTO,employee);
         employeeService.updateById(employee);
         employee.setUpdateTime(LocalDateTime.now());
