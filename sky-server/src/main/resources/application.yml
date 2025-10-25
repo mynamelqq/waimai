@@ -50,6 +50,9 @@ sky:
   wechat:
     secret: 6795864544522c71eef82849195fbcdc
     appid: wx3713ddc6b1a4361f
+    mchid:
+    notify-url: https://6619cf50.r6.cpolar.top/notify/paySuccess
+    refund-notify-url: https://6619cf50.r6.cpolar.top/notify/refundSuccess
 aliyun:
   oss:
     endpoint: https://oss-cn-hangzhou.aliyuncs.com

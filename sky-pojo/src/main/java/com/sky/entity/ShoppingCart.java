@@ -1,5 +1,6 @@
 package com.sky.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,12 +17,12 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@TableName("shopping_cart")
 public class ShoppingCart implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId(type= IdType.ASSIGN_ID)
     private Long id;
-
     //名称
     private String name;
 
@@ -45,6 +46,6 @@ public class ShoppingCart implements Serializable {
 
     //图片
     private String image;
-
+    @TableField(fill= FieldFill.INSERT)
     private LocalDateTime createTime;
 }
